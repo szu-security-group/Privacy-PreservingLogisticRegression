@@ -31,21 +31,12 @@ local: BMRPassive.out
 
 
 ################################################### STANDALONE ###################################################
-gisetteLRSA: BMRPassive.out
-	./BMRPassive.out STANDALONE 4 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/gisette/train_data files/dataset/gisette/train_labels files/dataset/gisette/test_data files/dataset/gisette/test_labels
-
-covid19LRSA: BMRPassive.out
-	./BMRPassive.out STANDALONE 4 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/covid19/train_data files/dataset/covid19/train_labels files/dataset/covid19/test_data files/dataset/covid19/test_labels
-
 SPECTFLRSA: BMRPassive.out
-	./BMRPassive.out STANDALONE 4 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/SPECTF/train_data files/dataset/SPECTF/train_labels files/dataset/SPECTF/test_data files/dataset/SPECTF/test_labels
-
-UISLRSA: BMRPassive.out
-	./BMRPassive.out STANDALONE 4 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/UIS/train_data files/dataset/UIS/train_labels files/dataset/UIS/test_data files/dataset/UIS/test_labels
+	./BMRPassive.out STANDALONE 4 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/SPECTF/train_data_p0 files/dataset/SPECTF/train_labels_p0 files/dataset/SPECTF/test_data_p0 files/dataset/SPECTF/test_labels_p0
 
 ################################################### 3PC ###################################################
 # Run all three parties with xterm terminal for A.
-UISLR3PC: BMRPassive.out
-	./BMRPassive.out 3PC 2 files/parties_ip/parties_localhost files/keys/keyC files/keys/keyCD files/dataset/UIS/train_data files/dataset/UIS/train_labels files/dataset/UIS/test_data files/dataset/UIS/test_labels >result2.txt &
-	./BMRPassive.out 3PC 1 files/parties_ip/parties_localhost files/keys/keyB files/keys/keyAB files/dataset/UIS/train_data_p1 files/dataset/UIS/train_labels_p1 files/dataset/UIS/test_data_p1 files/dataset/UIS/test_labels_p1 >result1.txt &
-	./BMRPassive.out 3PC 0 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/UIS/train_data files/dataset/UIS/train_labels files/dataset/UIS/test_data files/dataset/UIS/test_labels >result0.txt &
+SPECTFLR3PC: BMRPassive.out
+	./BMRPassive.out 3PC 2 files/parties_ip/parties_localhost files/keys/keyC files/keys/keyCD files/dataset/SPECTF/train_data_p0 files/dataset/SPECTF/train_labels_p0 files/dataset/SPECTF/test_data_p0 files/dataset/SPECTF/test_labels_p0 >result2.txt &
+	./BMRPassive.out 3PC 1 files/parties_ip/parties_localhost files/keys/keyB files/keys/keyAB files/dataset/SPECTF/train_data_p1 files/dataset/SPECTF/train_labels_p1 files/dataset/SPECTF/test_data_p1 files/dataset/SPECTF/test_labels_p1 >result1.txt &
+	./BMRPassive.out 3PC 0 files/parties_ip/parties_localhost files/keys/keyA files/keys/keyAB files/dataset/SPECTF/train_data_p0 files/dataset/SPECTF/train_labels_p1 files/dataset/SPECTF/test_data_p1 files/dataset/SPECTF/test_labels_p1 >result0.txt &
